@@ -1,0 +1,9 @@
+exports[`FieldWrapper.vue matches snapshot 1`] = `
+<div
+  class="ds-form-item"
+>
+  <input-label />
+
+  <input-error />
+</div>
+`;

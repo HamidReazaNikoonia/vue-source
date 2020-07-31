@@ -1,0 +1,17 @@
+exports[`Field.vue matches snapshot 1`] = `
+<fragment>
+  <div
+    class="ds-input-wrap"
+  >
+    <!---->
+
+    <input
+      class="ds-input"
+      tabindex="0"
+      type="text"
+    />
+
+    <!---->
+  </div>
+</fragment>
+`;
