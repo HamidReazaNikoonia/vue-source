@@ -1,6 +1,4 @@
-// Globally register all base components for convenience, because they
-// will be used very frequently. Components are registered using the
-// PascalCased version of their file name.
+// Globally register all base components in Subfolders
 
 import Vue from 'vue'
 
@@ -8,22 +6,22 @@ import Vue from 'vue'
 const requireComponent = require.context(
   // Look for files in the current directory
   '.',
-  // Do not look in subdirectories
-  false,
-  // Only include "_base-" prefixed .vue files
-  /_base-[\w-]+\.vue$/
+  // look in subdirectories
+  true,
+  // Only include .vue files
+  /index.vue$/
 )
 
-// For each matching file name...
+// loop in base component
 requireComponent.keys().forEach((fileName) => {
-  // Get the component config
+  // Get component
   const componentConfig = requireComponent(fileName)
   // Get the PascalCase version of the component name
   const componentName = fileName
     // Remove the "./_" from the beginning
-    .replace(/^\.\/_/, '')
+    .replace(/^\.\//, '')
     // Remove the file extension from the end
-    .replace(/\.\w+$/, '')
+    .replace(/\/index\.\w+$/, '')
     // Split up kebabs
     .split('-')
     // Upper case

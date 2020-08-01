@@ -1,5 +1,5 @@
 ---
-to: "src/components/<%= h.changeCase.kebab(name).toLowerCase().slice(0, 5) === 'base-' ? '_' : '' %><%= h.changeCase.kebab(name) %>.unit.js"
+to: "src/components/BaseComponent/base<%= h.changeCase.pascal(name) %>/index.unit.js"
 ---
 <%
   let fileName = h.changeCase.kebab(name).toLowerCase()
@@ -7,9 +7,9 @@ to: "src/components/<%= h.changeCase.kebab(name).toLowerCase().slice(0, 5) === '
   if (fileName.slice(0, 5) === 'base-') {
     fileName = '_' + fileName
   }
-%>import <%= importName %> from './<%= fileName %>'
+%>import <%= importName %> from './index.vue'
 
-describe('@components/<%= fileName %>', () => {
+describe('@components/BaseComponent/base<%= importName %>', () => {
   it('exports a valid component', () => {
     expect(<%= importName %>).toBeAComponent()
   })

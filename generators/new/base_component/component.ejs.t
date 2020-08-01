@@ -1,5 +1,5 @@
 ---
-to: "src/components/<%= h.changeCase.kebab(name).toLowerCase().slice(0, 5) === 'base-' ? '_' : '' %><%= h.changeCase.kebab(name) %>.vue"
+to: "src/components/BaseComponent/base<%= h.changeCase.pascal(name) %>/index.vue"
 ---
 <%
 if (blocks.indexOf('script') !== -1) {
